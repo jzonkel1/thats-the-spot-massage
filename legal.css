@@ -1,0 +1,41 @@
+/* shared styles for privacy / terms / thanks — That's the Spot Massage Therapy */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --espresso:#1C130E;--coffee:#2E2018;--cream:#F4E8D4;--cream-soft:rgba(244,232,212,.72);
+  --gold-lt:#E7CB84;--gold:#C9A24B;--gold-deep:#8A6B24;--red:#C0362B;--red-lt:#D4483C;--red-deep:#93251C;
+  --ink:#2A1D13;--muted:#6B5A4A;
+  --serif:'Fraunces',Georgia,serif;--sans:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:#FFFBF3;color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--gold-deep);text-decoration:none;font-weight:600}
+a:hover{color:var(--red);text-decoration:underline}
+.bar{background:linear-gradient(165deg,var(--coffee),var(--espresso));padding:18px 0;position:sticky;top:0;z-index:10;box-shadow:0 8px 30px -12px rgba(0,0,0,.5)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.wordmark{font-family:var(--serif);color:var(--cream);font-size:1.15rem;font-weight:600;letter-spacing:.01em}
+.wordmark span{color:var(--red-lt);font-style:italic}
+.bar a.back{color:var(--gold-lt);font-size:.9rem;display:inline-flex;align-items:center;gap:7px}
+.bar a.back:hover{color:#fff;text-decoration:none}
+.wrap{width:min(820px,92vw);margin-inline:auto}
+main{padding:clamp(40px,7vw,72px) 0 80px}
+h1{font-family:var(--serif);font-size:clamp(2rem,5vw,2.8rem);line-height:1.15;color:var(--espresso);font-weight:600}
+h1 .i{font-style:italic;color:var(--gold-deep)}
+.eff{margin-top:10px;font-size:.86rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.lede{margin-top:20px;font-size:1.06rem;color:var(--muted)}
+h2{font-family:var(--serif);font-size:1.42rem;color:var(--espresso);margin-top:42px;font-weight:600}
+h3{font-family:var(--sans);font-size:1.02rem;color:var(--espresso);margin-top:24px;font-weight:700}
+p,li{margin-top:12px;color:var(--muted)}
+ul,ol{margin-top:6px;padding-left:22px}
+li{margin-top:8px}
+strong{color:var(--ink);font-weight:600}
+hr{margin-top:44px;border:none;border-top:1px solid rgba(42,29,19,.12)}
+.card{margin-top:26px;background:rgba(201,162,75,.12);border:1px dashed rgba(201,162,75,.55);border-radius:16px;padding:20px 24px}
+.card p:first-child{margin-top:0}
+.warn{background:rgba(192,54,43,.08);border-color:rgba(192,54,43,.45)}
+footer{background:linear-gradient(165deg,var(--coffee),var(--espresso));color:var(--cream-soft);padding:34px 0;text-align:center;font-size:.86rem}
+footer a{color:var(--gold-lt)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:.96rem;padding:14px 26px;border-radius:999px;
+  background:linear-gradient(160deg,var(--gold-lt),var(--gold-deep));color:#2A1B06;box-shadow:0 12px 26px -10px rgba(158,122,43,.8);transition:.25s}
+.btn:hover{filter:brightness(1.06);transform:translateY(-2px);text-decoration:none;color:#2A1B06}
+.btn-red{background:linear-gradient(160deg,var(--red-lt),var(--red-deep));color:#fff;box-shadow:0 12px 26px -10px rgba(147,37,28,.85)}
+.btn-red:hover{color:#fff}

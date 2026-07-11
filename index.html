@@ -110,6 +110,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0
   background:rgba(201,162,75,.14);border:1px dashed rgba(201,162,75,.55);border-radius:16px;padding:16px 22px;font-size:.98rem;color:var(--ink)}
 .addon b{font-family:var(--serif);font-size:1.15rem;font-weight:600}
 .addon .pill{background:var(--red);color:#fff;font-weight:700;padding:4px 14px;border-radius:999px;font-size:.9rem}
+/* military offer band — REMOVE THIS BLOCK (+ the .addon.mil div) WHEN THE JULY OFFER ENDS */
+.addon.mil{background:rgba(192,54,43,.10);border:1px dashed rgba(192,54,43,.5);margin-top:14px}
+.addon.mil .pill{background:var(--gold-deep,#8A6B24);color:#fff}
+.addon.mil svg{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:var(--red);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 /* ---------- about ---------- */
 .about{background:var(--cream)}
@@ -167,10 +171,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0
 .hours{margin-top:24px;border:1px solid rgba(42,29,19,.12);border-radius:16px;padding:16px 20px;background:#FFFBF3}
 .hours h4{font-family:var(--sans);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .hrow{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:.95rem;color:var(--ink);border-bottom:1px dashed rgba(42,29,19,.1)}
-.hrow:last-child{border-bottom:none}
+.hrow:last-of-type{border-bottom:none}
 .hrow .t{font-weight:600;color:var(--muted)}
 .hrow.today{color:var(--red-deep)}.hrow.today .t{color:var(--red)}
 .hrow.today .d::after{content:" · Today";color:var(--red);font-weight:600}
+.hnote{margin-top:10px;padding-top:10px;border-top:1px solid rgba(42,29,19,.1);font-size:.84rem;color:var(--muted);font-style:italic}
+.detail .v a[href^="mailto"]{font-size:.98rem;overflow-wrap:anywhere}
 .book-form{padding:clamp(36px,5vw,52px);color:var(--cream);background:linear-gradient(165deg,var(--coffee),var(--espresso))}
 .book-form h3{font-size:1.7rem;color:var(--cream)}
 .book-form p{color:var(--cream-soft);font-size:.92rem;margin-top:8px}
@@ -181,7 +187,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0
 .field input::placeholder{color:rgba(244,232,212,.5)}
 .field input:focus,.field select:focus{border-color:var(--gold);background:rgba(244,232,212,.14)}
 .field select option{color:#2A1B06}
-.book-form .btn{width:100%;justify-content:center;margin-top:20px;padding:15px;font-size:1rem}
+.book-form .btn{width:100%;justify-content:center;margin-top:20px;padding:15px;font-size:1rem;border:none;font-family:var(--sans)}
 .book-form .fine{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.8rem;color:rgba(244,232,212,.6);margin-top:14px;text-align:center}
 .book-form .fine svg{width:14px;height:14px;stroke:var(--gold-lt);fill:none;stroke-width:2;flex:none}
 
@@ -269,14 +275,15 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   "image":"https://thatsthespot.glossgenius.com/",
   "url":"https://thatsthespot.glossgenius.com/",
   "telephone":"+1-361-373-9592",
+  "email":"georgealvarado2790@yahoo.com",
   "priceRange":"$25–$90",
   "currenciesAccepted":"USD",
+  "publicAccess":false,
   "address":{"@type":"PostalAddress","streetAddress":"3765 S Alameda St, Suite 305","addressLocality":"Corpus Christi","addressRegion":"TX","postalCode":"78411","addressCountry":"US"},
   "areaServed":"Corpus Christi, TX",
-  "founder":{"@type":"Person","name":"George Alvarado","jobTitle":"Licensed Massage Therapist"},
+  "founder":{"@type":"Person","name":"George Alvarado","jobTitle":"Licensed Massage Therapist","hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","identifier":"MT149213","recognizedBy":{"@type":"Organization","name":"Texas Department of Licensing and Regulation"}}},
   "openingHoursSpecification":[
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Saturday","Sunday"],"opens":"07:00","closes":"22:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"17:00","closes":"22:00"}
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"22:00"}
   ],
   "makesOffer":[
     {"@type":"Offer","priceCurrency":"USD","price":"55","itemOffered":{"@type":"Service","name":"Swedish Massage (50 min)"}},
@@ -291,7 +298,9 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"Do I need an appointment?","acceptedAnswer":{"@type":"Answer","text":"Booking online is the easiest way to grab a time — any hour of the day. You're also welcome to call or text (361) 373-9592, and walk-ins are taken when the schedule allows."}},
+    {"@type":"Question","name":"Do I need an appointment?","acceptedAnswer":{"@type":"Answer","text":"Yes — That's the Spot is by appointment only, so every client gets a private, unrushed session. Booking online is the easiest way to grab a time, or call or text (361) 373-9592."}},
+    {"@type":"Question","name":"What are your hours?","acceptedAnswer":{"@type":"Answer","text":"Open 7 days a week, 7:00 AM to 10:00 PM. Live availability is always shown when you book online."}},
+    {"@type":"Question","name":"Do you offer a military discount?","acceptedAnswer":{"@type":"Answer","text":"Yes — a military discount is available. Mention it when you book or let George know at your visit."}},
     {"@type":"Question","name":"What is your cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"Life happens. If something comes up and you can't make your appointment, just let George know ahead of time so the spot can be offered to someone else."}},
     {"@type":"Question","name":"How should I prepare for my massage?","acceptedAnswer":{"@type":"Answer","text":"Come as you are — arrive a few minutes early, wear comfortable clothing, and drink water before and after. Let George know any focus areas or injuries so he can tailor the session."}},
     {"@type":"Question","name":"How do I pay, and do you offer payment plans?","acceptedAnswer":{"@type":"Answer","text":"Pay securely when you book or at your visit. Flexible Buy Now, Pay Later is available at checkout for eligible bookings."}},
@@ -336,7 +345,7 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
         </div>
         <div class="microtrust rv">
           <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Licensed Massage Therapist</span>
-          <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Open 7 days a week</span>
+          <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Open 7 days · 7am–10pm</span>
           <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Private studio</span>
         </div>
       </div>
@@ -346,9 +355,9 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   <!-- ASSURANCES -->
   <section class="assure">
     <div class="wrap">
-      <div class="a rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></div><div><b>Licensed LMT</b><span>Texas-licensed therapist</span></div></div>
+      <div class="a rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></div><div><b>Licensed LMT</b><span>TX License #MT149213</span></div></div>
       <div class="a rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg></div><div><b>Private Studio</b><span>One client at a time</span></div></div>
-      <div class="a rv"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div><div><b>Open 7 Days</b><span>Evenings available</span></div></div>
+      <div class="a rv"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div><div><b>Open 7 Days</b><span>7am–10pm, by appointment</span></div></div>
       <div class="a rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div><div><b>Tailored Pressure</b><span>Light to deep — your call</span></div></div>
     </div>
   </section>
@@ -358,8 +367,8 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
     <div class="wrap">
       <div class="sec-head rv">
         <span class="eyebrow">The Menu</span>
-        <h2>Bodywork, <span class="i gold">your way</span></h2>
-        <p>Straightforward sessions and honest pricing. Tell George where it hurts — he'll build the hour around it.</p>
+        <h2>A great massage at a <span class="i gold">great price</span></h2>
+        <p>Straightforward sessions, honest pricing, no upsells. Tell George where it hurts — he'll build the hour around it.</p>
       </div>
       <div class="svc-grid">
         <div class="svc rv">
@@ -388,6 +397,11 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
         </div>
       </div>
       <div class="addon rv"><b>New here?</b> Flexible <span class="pill">Buy Now, Pay Later</span> available at checkout for eligible bookings.</div>
+      <!-- MILITARY OFFER — remove this whole div when the offer ends -->
+      <div class="addon mil rv">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 8.8l6.5-.9L12 2z"/></svg>
+        <b>Military discount</b> <span class="pill">Thank you for your service</span> Active duty &amp; veterans — just mention it when you book.
+      </div>
     </div>
   </section>
 
@@ -403,7 +417,7 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
         <h2>Refreshed, restored, <span class="i gold">renewed</span></h2>
         <p>Hi, I'm George Alvarado — a licensed massage therapist here in Corpus Christi. I'm dedicated to helping clients reduce pain, relieve stress, and improve overall well-being.</p>
         <p>Every session is personalized. Whether you're after pure relaxation, recovery from physical tension, or targeted therapeutic work, I focus on what your body needs that day — in a welcoming space where you can just switch off and leave feeling renewed.</p>
-        <span class="lmt"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>Texas Licensed Massage Therapist</span>
+        <span class="lmt"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>Texas Licensed Massage Therapist · License #MT149213</span>
       </div>
     </div>
   </section>
@@ -445,7 +459,9 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
         <h2>Questions, answered</h2>
       </div>
       <div class="faq-list">
-        <details class="rv"><summary>Do I need an appointment?<span class="pl">+</span></summary><div class="ans">Booking online is the easiest way to grab a time — any hour of the day. You're also welcome to call or text <a href="tel:+13613739592" style="color:var(--gold-deep);font-weight:600">(361) 373-9592</a>, and walk-ins are taken when the schedule allows.</div></details>
+        <details class="rv"><summary>Do I need an appointment?<span class="pl">+</span></summary><div class="ans">Yes — That's the Spot is <b>appointment only</b>, so your session is private and unrushed with no waiting around. Booking online is the fastest way to grab a time, or call or text <a href="tel:+13613739592" style="color:var(--gold-deep);font-weight:600">(361) 373-9592</a>.</div></details>
+        <details class="rv"><summary>What are your hours?<span class="pl">+</span></summary><div class="ans">Open <b>7 days a week, 7:00 AM – 10:00 PM</b>. Early mornings and late evenings included — the live schedule shows exactly which times are open when you book.</div></details>
+        <details class="rv"><summary>Do you offer a military discount?<span class="pl">+</span></summary><div class="ans">Yes. Active duty and veterans get a military discount — just mention it when you book or let George know at your visit.</div></details>
         <details class="rv"><summary>What's your cancellation policy?<span class="pl">+</span></summary><div class="ans">Life happens. If something comes up and you can't make your appointment, just let George know ahead of time so the spot can be offered to someone else.</div></details>
         <details class="rv"><summary>How should I prepare for my massage?<span class="pl">+</span></summary><div class="ans">Come as you are — arrive a few minutes early, wear comfortable clothing, and drink some water before and after. Let George know any focus areas or injuries so he can tailor the session.</div></details>
         <details class="rv"><summary>How do I pay? Do you offer payment plans?<span class="pl">+</span></summary><div class="ans">Pay securely when you book or at your visit. Flexible <b>Buy Now, Pay Later</b> is available at checkout for eligible bookings.</div></details>
@@ -470,34 +486,46 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
             <div><div class="k">Location</div><div class="v">3765 S Alameda St, Suite 305<br/>Corpus Christi, TX 78411</div></div>
           </div>
+          <div class="detail">
+            <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
+            <div><div class="k">Email</div><div class="v"><a href="mailto:georgealvarado2790@yahoo.com">georgealvarado2790@yahoo.com</a></div></div>
+          </div>
           <div class="hours">
             <h4><span class="dot"></span>Business Hours · Open 7 Days</h4>
             <div class="hrow" data-day="1"><span class="d">Monday</span><span class="t">7:00 AM – 10:00 PM</span></div>
-            <div class="hrow" data-day="2"><span class="d">Tuesday</span><span class="t">5:00 PM – 10:00 PM</span></div>
-            <div class="hrow" data-day="3"><span class="d">Wednesday</span><span class="t">5:00 PM – 10:00 PM</span></div>
-            <div class="hrow" data-day="4"><span class="d">Thursday</span><span class="t">5:00 PM – 10:00 PM</span></div>
-            <div class="hrow" data-day="5"><span class="d">Friday</span><span class="t">5:00 PM – 10:00 PM</span></div>
+            <div class="hrow" data-day="2"><span class="d">Tuesday</span><span class="t">7:00 AM – 10:00 PM</span></div>
+            <div class="hrow" data-day="3"><span class="d">Wednesday</span><span class="t">7:00 AM – 10:00 PM</span></div>
+            <div class="hrow" data-day="4"><span class="d">Thursday</span><span class="t">7:00 AM – 10:00 PM</span></div>
+            <div class="hrow" data-day="5"><span class="d">Friday</span><span class="t">7:00 AM – 10:00 PM</span></div>
             <div class="hrow" data-day="6"><span class="d">Saturday</span><span class="t">7:00 AM – 10:00 PM</span></div>
             <div class="hrow" data-day="0"><span class="d">Sunday</span><span class="t">7:00 AM – 10:00 PM</span></div>
+            <div class="hnote">By appointment only — live openings shown when you book.</div>
           </div>
         </div>
-        <div class="book-form">
+        <form class="book-form" action="https://formsubmit.co/georgealvarado2790@yahoo.com" method="POST">
           <h3>Request a time</h3>
           <p>Send your details and George will text you back to lock it in.</p>
-          <div class="field"><label>Name</label><input type="text" placeholder="Your name" /></div>
-          <div class="field"><label>Phone</label><input type="tel" placeholder="(361) 000-0000" /></div>
-          <div class="field"><label>Service</label>
-            <select>
+          <input type="hidden" name="_subject" value="New appointment request — That's the Spot website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://jzonkel1.github.io/thats-the-spot-massage/thanks.html" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="Name" type="text" placeholder="Your name" required /></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" placeholder="(361) 000-0000" required /></div>
+          <div class="field"><label for="f-svc">Service</label>
+            <select id="f-svc" name="Service">
               <option>Swedish Massage — 50 min ($55)</option>
               <option>Swedish Massage — 80 min ($70)</option>
               <option>Deep Tissue Back — 25 min ($30)</option>
               <option>Foot Massage — 20 min ($25)</option>
               <option>Add Hot Stones (+$20)</option>
+              <option>Not sure — help me pick</option>
             </select>
           </div>
-          <a class="btn btn-red" href="https://thatsthespot.glossgenius.com/services" target="_blank" rel="noopener">Request My Appointment</a>
+          <div class="field"><label for="f-when">Preferred day &amp; time <span style="opacity:.6;font-weight:400">(optional)</span></label><input id="f-when" name="Preferred time" type="text" placeholder="e.g. Saturday morning" /></div>
+          <button type="submit" class="btn btn-red">Request My Appointment</button>
           <div class="fine"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>No spam — your info is only used to confirm your visit.</div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
@@ -526,18 +554,22 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
       <div class="foot-col">
         <div class="h">Visit</div>
         3765 S Alameda St, Suite 305<br/>Corpus Christi, TX 78411<br/>
-        <a href="tel:+13613739592">(361) 373-9592</a>
+        <a href="tel:+13613739592">(361) 373-9592</a><br/>
+        <a href="mailto:georgealvarado2790@yahoo.com">georgealvarado2790@yahoo.com</a><br/>
+        <span style="opacity:.75">Open 7 days · 7am–10pm · By appointment</span>
       </div>
       <div class="foot-col">
         <div class="h">Explore</div>
         <a href="#services">Services</a><br/>
         <a href="#about">About</a><br/>
         <a href="#faq">FAQ</a><br/>
-        <a href="https://thatsthespot.glossgenius.com/services" target="_blank" rel="noopener">Book Online</a>
+        <a href="https://thatsthespot.glossgenius.com/services" target="_blank" rel="noopener">Book Online</a><br/>
+        <a href="privacy.html">Privacy Policy</a><br/>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <div>© <span id="yr"></span> That's the Spot Massage Therapy · George Alvarado, LMT</div>
+      <div>© <span id="yr"></span> That's the Spot Massage Therapy · George Alvarado, LMT · TX License #MT149213</div>
       <div>Site by <a href="#top">Zonkel Media</a></div>
     </div>
   </div>
