@@ -217,10 +217,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0
 .book-form p{color:var(--cream-soft);font-size:.92rem;margin-top:8px}
 .field{margin-top:15px}
 .field label{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-soft);font-weight:600}
-.field input,.field select{width:100%;margin-top:7px;padding:13px 15px;border-radius:12px;border:1px solid rgba(201,162,75,.3);
+.field input,.field select,.field textarea{width:100%;margin-top:7px;padding:13px 15px;border-radius:12px;border:1px solid rgba(201,162,75,.3);
   background:rgba(244,232,212,.08);color:var(--cream);font-family:var(--sans);font-size:.96rem;outline:none;transition:.2s}
-.field input::placeholder{color:rgba(244,232,212,.5)}
-.field input:focus,.field select:focus{border-color:var(--gold);background:rgba(244,232,212,.14)}
+.field textarea{resize:vertical;min-height:96px}
+.field input::placeholder,.field textarea::placeholder{color:rgba(244,232,212,.5)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);background:rgba(244,232,212,.14)}
 .field select option{color:#2A1B06}
 .book-form .btn{width:100%;justify-content:center;margin-top:20px;padding:15px;font-size:1rem;border:none;font-family:var(--sans)}
 .book-form .fine{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.8rem;color:rgba(244,232,212,.6);margin-top:14px;text-align:center}
@@ -553,28 +554,28 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
           </div>
         </div>
         <form class="book-form" action="https://formsubmit.co/georgealvarado2790@yahoo.com" method="POST">
-          <h3>Request a time</h3>
-          <p>Send your details and George will text you back to lock it in.</p>
-          <input type="hidden" name="_subject" value="New appointment request — That's the Spot website" />
+          <h3>Have a special request?</h3>
+          <p>Booking a session is one tap away — but for anything the booking page can't do, send it here and George will text you back.</p>
+          <input type="hidden" name="_subject" value="Special request — That's the Spot website" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://jzonkel1.github.io/thats-the-spot-massage/thanks.html" />
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="field"><label for="f-name">Name</label><input id="f-name" name="Name" type="text" placeholder="Your name" required /></div>
           <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" placeholder="(361) 000-0000" required /></div>
-          <div class="field"><label for="f-svc">Service</label>
-            <select id="f-svc" name="Service">
-              <option>Swedish Massage — 50 min ($55)</option>
-              <option>Swedish Massage — 80 min ($70)</option>
-              <option>Deep Tissue Back — 25 min ($30)</option>
-              <option>Foot Massage — 20 min ($25)</option>
-              <option>Add Hot Stones (+$20)</option>
-              <option>Not sure — help me pick</option>
+          <div class="field"><label for="f-req">What can George help with?</label>
+            <select id="f-req" name="Request">
+              <option>Booking for two — back-to-back sessions</option>
+              <option>A gift for someone else</option>
+              <option>Help me choose the right massage</option>
+              <option>A question about an injury or condition</option>
+              <option>A time I don't see online</option>
+              <option>Something else</option>
             </select>
           </div>
-          <div class="field"><label for="f-when">Preferred day &amp; time <span style="opacity:.6;font-weight:400">(optional)</span></label><input id="f-when" name="Preferred time" type="text" placeholder="e.g. Saturday morning" /></div>
-          <button type="submit" class="btn btn-red">Request My Appointment</button>
-          <div class="fine"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>No spam — your info is only used to confirm your visit.</div>
+          <div class="field"><label for="f-msg">The details <span style="opacity:.6;font-weight:400">(optional)</span></label><textarea id="f-msg" name="Details" placeholder="Tell George what you need — he reads every one of these himself."></textarea></div>
+          <button type="submit" class="btn btn-red">Send My Request</button>
+          <div class="fine"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>No spam — your info is only used to reply to your request.</div>
         </form>
       </div>
     </div>
