@@ -94,6 +94,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0
 .hero-copy{max-width:720px;margin-inline:auto}
 .eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:.72rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:22px}
 .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--gold-lt)}
+.eyebrow::after{content:"";width:26px;height:1.5px;background:currentColor;display:none}
+.hero .eyebrow::after,.faq .sec-head .eyebrow::after{display:block}
 .hero h1{font-size:clamp(3rem,6.6vw,5.4rem);color:var(--cream);text-shadow:0 2px 30px rgba(0,0,0,.4)}
 .hero p.sub{font-size:clamp(1.08rem,1.7vw,1.32rem);color:rgba(244,232,212,.86);margin:24px auto 36px;max-width:46ch}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center}
@@ -289,6 +291,7 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   .book-form{order:2}
   /* center almost everything */
   .sec-head{margin-inline:auto;text-align:center}
+  .eyebrow::after{display:block}
   .svc{text-align:center}
   .svc .ico{margin-inline:auto}
   .svc h3{flex-direction:column;align-items:center;gap:3px}
