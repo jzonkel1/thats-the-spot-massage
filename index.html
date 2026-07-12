@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>That's the Spot Massage Therapy — Corpus Christi, TX</title>
+<title>Massage Therapy in Corpus Christi, TX | That's the Spot Massage Therapy</title>
 <meta name="description" content="Therapeutic Swedish and deep tissue massage in Corpus Christi with George Alvarado, LMT. 3765 S Alameda St, Suite 305. Open 7 days. Book online or call (361) 373-9592." />
 <link rel="canonical" href="https://thatsthespotmassagecc.com/" />
 <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -14,18 +14,19 @@
 <meta name="ICBM" content="27.729, -97.383" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="That's the Spot Massage Therapy" />
-<meta property="og:title" content="That's the Spot Massage Therapy — Corpus Christi, TX" />
+<meta property="og:title" content="Massage Therapy in Corpus Christi, TX | That's the Spot" />
 <meta property="og:description" content="A great massage at a great price. Swedish & deep tissue with George Alvarado, LMT. Open 7 days, 7am–10pm, by appointment. Book online in seconds." />
-<meta property="og:url" content="https://thatsthespotmassagecc.com/" />
-<meta property="og:image" content="https://thatsthespotmassagecc.com/og-image.jpg" />
+<!-- TODO when thatsthespotmassagecc.com DNS is live: switch og:url + both image URLs to the domain -->
+<meta property="og:url" content="https://jzonkel1.github.io/thats-the-spot-massage/" />
+<meta property="og:image" content="https://jzonkel1.github.io/thats-the-spot-massage/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="That's the Spot Massage Therapy — private massage studio in Corpus Christi, TX" />
 <meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="That's the Spot Massage Therapy — Corpus Christi, TX" />
+<meta name="twitter:title" content="Massage Therapy in Corpus Christi, TX | That's the Spot" />
 <meta name="twitter:description" content="A great massage at a great price. Swedish & deep tissue with George Alvarado, LMT. Open 7 days, 7am–10pm. Book online in seconds." />
-<meta name="twitter:image" content="https://thatsthespotmassagecc.com/og-image.jpg" />
+<meta name="twitter:image" content="https://jzonkel1.github.io/thats-the-spot-massage/og-image.jpg" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="favicon.png" type="image/png" sizes="96x96" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -259,6 +260,9 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   background:rgba(16,12,10,.9);backdrop-filter:blur(14px);border-top:1px solid rgba(201,162,75,.25)}
 .mobile-bar .btn{flex:1;justify-content:center;padding:14px}
 @media(max-width:880px){.mobile-bar{display:flex}body{padding-bottom:74px}}
+.mobile-bar{transition:transform .35s ease,opacity .35s ease}
+.mobile-bar.armed{transform:translateY(120%);opacity:0}
+.mobile-bar.armed.show{transform:translateY(0);opacity:1}
 
 /* ---------- booking slide-in popup ---------- */
 .pop{position:fixed;right:24px;bottom:24px;z-index:300;width:min(360px,92vw);border-radius:20px;padding:26px 24px 22px;color:var(--cream);
@@ -687,6 +691,17 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
       f.forEach(function(el, j){ el.classList.toggle('on', j === i); });
     }, 4500);
   });
+})();
+</script>
+<script>
+(function(){
+  var bar = document.querySelector('.mobile-bar');
+  var hero = document.querySelector('.hero');
+  if (!bar || !hero || !('IntersectionObserver' in window)) return;
+  bar.classList.add('armed');
+  new IntersectionObserver(function(entries){
+    bar.classList.toggle('show', !entries[0].isIntersecting);
+  }, {threshold: 0.05}).observe(hero);
 })();
 </script>
 </body>
