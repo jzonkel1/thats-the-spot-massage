@@ -277,7 +277,11 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
 .pop .btn{width:100%;justify-content:center}
 .pop .later{display:block;text-align:center;margin-top:11px;font-size:.82rem;color:var(--cream-soft);cursor:pointer}
 .pop .later:hover{color:var(--cream)}
-@media(max-width:880px){.pop{right:12px;left:12px;bottom:86px;width:auto}}
+/* mobile: popup hugs the true screen bottom; rides up only while the sticky bar is showing */
+@media(max-width:880px){
+  .pop{right:12px;left:12px;bottom:calc(14px + env(safe-area-inset-bottom));width:auto}
+  .mobile-bar.show ~ .pop{bottom:calc(86px + env(safe-area-inset-bottom))}
+}
 
 .rv{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
