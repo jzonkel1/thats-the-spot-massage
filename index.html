@@ -557,14 +557,11 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
             <div class="hnote">By appointment only — live openings shown when you book.</div>
           </div>
         </div>
-        <form class="book-form" action="https://formsubmit.co/georgealvarado2790@yahoo.com" method="POST">
+        <form class="book-form" name="special-request" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
           <h3>Have a special request?</h3>
           <p>Booking a session is one tap away — but for anything the booking page can't do, send it here and George will text you back.</p>
-          <input type="hidden" name="_subject" value="Special request — That's the Spot website" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://jzonkel1.github.io/thats-the-spot-massage/thanks.html" />
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="form-name" value="special-request" />
+          <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
           <div class="field"><label for="f-name">Name</label><input id="f-name" name="Name" type="text" placeholder="Your name" required /></div>
           <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" placeholder="(361) 000-0000" required /></div>
           <div class="field"><label for="f-req">What can George help with?</label>
