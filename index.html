@@ -160,6 +160,37 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0
 .about .lmt svg{width:20px;height:20px;stroke:var(--gold-deep);fill:none;stroke-width:2}
 
 /* ---------- what to expect ---------- */
+/* ---- REVIEWS MARQUEE ---- */
+.reviews{background:var(--espresso);color:var(--cream);overflow:hidden;padding:clamp(58px,7.5vw,92px) 0}
+.reviews .rv-head{text-align:center;max-width:780px;margin:0 auto clamp(32px,4vw,46px)}
+.reviews .eyebrow{justify-content:center;color:var(--gold-lt)}
+.reviews .eyebrow::after{display:block}
+.reviews h2{font-size:clamp(1.85rem,3.7vw,2.7rem)}
+.rv-badge{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 13px;margin-top:24px;
+  padding:11px 22px;border-radius:999px;background:rgba(244,232,212,.06);border:1px solid var(--glass-brd);transition:.3s}
+.rv-badge:hover{background:rgba(244,232,212,.12);border-color:rgba(233,203,132,.5)}
+.rv-badge .g{width:16px;height:16px;fill:var(--gold-lt);flex:none}
+.rv-badge b{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--gold-lt);line-height:1}
+.rv-badge .cnt{font-size:.9rem;color:var(--cream-soft)}
+.rv-badge .go{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--gold)}
+.marquee{position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mq-track{display:flex;gap:20px;width:max-content;padding:4px 0;animation:mq 105s linear infinite}
+.marquee:hover .mq-track,.marquee:focus-within .mq-track,.marquee:active .mq-track{animation-play-state:paused}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 10px))}}
+.rvw{flex:0 0 min(324px,78vw);display:flex;flex-direction:column;gap:13px;padding:24px 24px 21px;border-radius:18px;
+  background:rgba(244,232,212,.055);border:1px solid rgba(233,203,132,.18)}
+.rvw .stars{display:flex;gap:3px}
+.rvw .stars svg{width:15px;height:15px;fill:var(--gold);stroke:none}
+.rvw blockquote{font-size:.945rem;line-height:1.6;color:var(--cream-soft);
+  display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+.rvw figcaption{display:flex;align-items:center;gap:11px;margin-top:auto;padding-top:2px}
+.rvw .av{width:35px;height:35px;flex:none;border-radius:50%;display:grid;place-items:center;
+  background:rgba(201,162,75,.2);border:1px solid rgba(233,203,132,.32);color:var(--gold-lt);font-family:var(--serif);font-size:1.05rem;line-height:1}
+.rvw .nm{display:block;font-weight:600;font-size:.93rem;color:var(--cream)}
+.rvw .src{display:block;font-size:.74rem;color:rgba(244,232,212,.45)}
+@media (prefers-reduced-motion:reduce){.mq-track{animation:none}}
 .expect{position:relative;color:var(--cream);overflow:hidden;background:var(--espresso)}
 .expect .tex{position:absolute;inset:0;z-index:0;opacity:.5;background-size:cover;background-position:center 28%;filter:sepia(.08) saturate(1)}
 .expect::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(28,19,14,.72),rgba(20,13,8,.88))}
@@ -376,6 +407,7 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
     <div class="nav-links">
       <a class="lk" href="#services">Services</a>
       <a class="lk" href="#about">About</a>
+      <a class="lk" href="#reviews">Reviews</a>
       <a class="lk" href="#faq">FAQ</a>
       <a class="lk" href="#book">Location</a>
       <a class="btn btn-ghost call" href="tel:+13613739592">Call</a>
@@ -479,6 +511,89 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
         <b>Mobile massage</b> <span class="pill">+$25 travel</span> George can come to you. The travel fee is $25 in Corpus Christi, $50 outside the city.
       </div>
       <div class="addon rv"><b>New here?</b> Flexible <span class="pill">Buy Now, Pay Later</span> available at checkout for eligible bookings.</div>
+    </div>
+  </section>
+
+
+  <!-- REVIEWS -->
+  <!-- REVIEW COUNT: when new Google reviews land, update the count in the h2 + badge and add a .rvw card below -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="rv-head rv">
+        <span class="eyebrow">What Clients Say</span>
+        <h2>12 reviews on Google. <span class="i" style="color:var(--gold-lt)">Every one of them five stars.</span></h2>
+        <a class="rv-badge" href="https://www.google.com/maps?cid=5943640493198800165" target="_blank" rel="noopener">
+          <svg class="g" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+          <b>5.0</b>
+          <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+          <span class="cnt">12 Google reviews</span>
+          <span class="go">Read them on Google <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
+    <div class="marquee rv">
+      <div class="mq-track" id="mqTrack">
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>I had such a lovely experience! I went in with my shoulder absolutely killing me and received a focused Swedish massage. It was exactly what I needed. I left feeling relaxed, and best of all, my shoulder pain was gone. I also loved the thoughtful little touch of having a sign welcoming me by name. It was such a simple thing, but it genuinely brought me so much joy and made the experience feel personal from the moment I arrived. I’m so glad I went and will definitely be back. Relaxed, pain-free, and very happy with my experience!</blockquote>
+            <figcaption><span class="av" aria-hidden="true">V</span><span><span class="nm">Vertina Robinson</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>Great experience - the massage was very comfortable and relaxing. Definitely scheduling again.</blockquote>
+            <figcaption><span class="av" aria-hidden="true">S</span><span><span class="nm">Sandi Castaneda</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>Had one of the best deep tissue massage from George. Great price for 80min. Will definitely return.</blockquote>
+            <figcaption><span class="av" aria-hidden="true">M</span><span><span class="nm">margarito garcia</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>So I have had several massages over the years but hands down, George was freaking amazing! Clean, friendly and magic hands! I took a little nap too! Definitely will be using his services again!</blockquote>
+            <figcaption><span class="av" aria-hidden="true">M</span><span><span class="nm">Merlinda Benefield</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>Outstanding service! I came in with severe upper back pain, and my therapist was able to release the tension with great skill and care. I left feeling relaxed, refreshed, and completely taken care of. The experience exceeded my expectations, and I highly recommend them to anyone looking for a professional and effective massage.</blockquote>
+            <figcaption><span class="av" aria-hidden="true">A</span><span><span class="nm">Aundrea Salinas</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>Very professional and genuinely sweet personality. Immaculately clean space. Massage was awesome. Just the right pressure. Highly recommended!</blockquote>
+            <figcaption><span class="av" aria-hidden="true">K</span><span><span class="nm">Kellie Mathieu</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>Best massage in Corpus Christi! I highly recommend and already booked my next session.</blockquote>
+            <figcaption><span class="av" aria-hidden="true">V</span><span><span class="nm">Vennessa</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>As a massage therapist I know what to look for when getting a massage. He took good care of me during the session and addressed the needed areas. Would recommend for others</blockquote>
+            <figcaption><span class="av" aria-hidden="true">C</span><span><span class="nm">Cameron Cave</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>So glad I stumbled upon Thats the Spot. George did a great job with the massage and his location is very welcoming and creates a relaxing mood. Will definitely be recommending to friends as well as visiting again in the future!</blockquote>
+            <figcaption><span class="av" aria-hidden="true">A</span><span><span class="nm">Alfonso Ramirez Jr</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>George did an amazing job and created a great atmosphere that helped the experience feel relaxing and safe. Definitely knows what he’s doing and is very professional.</blockquote>
+            <figcaption><span class="av" aria-hidden="true">T</span><span><span class="nm">T 3</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>Great experience all around! I would highly recommend George’s services!</blockquote>
+            <figcaption><span class="av" aria-hidden="true">A</span><span><span class="nm">Andy Blair</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+          <figure class="rvw">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.46l-5.9 3.1 1.12-6.57L2.45 9.34l6.6-.96L12 2.4z"/></svg></div>
+            <blockquote>Very professional management, years of experience, very nice inside, I don’t see a reason not to give them a try.</blockquote>
+            <figcaption><span class="av" aria-hidden="true">J</span><span><span class="nm">Jeffrey Zonkel</span><span class="src">Google review</span></span></figcaption>
+          </figure>
+      </div>
     </div>
   </section>
 
@@ -642,6 +757,7 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
         <div class="h">Explore</div>
         <a href="#services">Services</a><br/>
         <a href="#about">About</a><br/>
+        <a href="#reviews">Reviews</a><br/>
         <a href="#faq">FAQ</a><br/>
         <a href="https://thatsthespot.glossgenius.com/services" target="_blank" rel="noopener">Book Online</a><br/>
         <a href="privacy.html">Privacy Policy</a><br/>
@@ -723,6 +839,18 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   new IntersectionObserver(function(entries){
     bar.classList.toggle('show', !entries[0].isIntersecting);
   }, {threshold: 0.05}).observe(hero);
+})();
+</script>
+<script>
+(function(){
+  var t = document.getElementById('mqTrack');
+  if (!t) return;
+  var cards = Array.prototype.slice.call(t.children);
+  cards.forEach(function(c){
+    var d = c.cloneNode(true);
+    d.setAttribute('aria-hidden','true');
+    t.appendChild(d);
+  });
 })();
 </script>
 </body>
