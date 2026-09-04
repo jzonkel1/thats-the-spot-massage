@@ -143,10 +143,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0
   background:rgba(201,162,75,.14);border:1px dashed rgba(201,162,75,.55);border-radius:16px;padding:16px 22px;font-size:.98rem;color:var(--ink)}
 .addon b{font-family:var(--serif);font-size:1.15rem;font-weight:600}
 .addon .pill{background:var(--red);color:#fff;font-weight:700;padding:4px 14px;border-radius:999px;font-size:.9rem}
-/* military offer band — REMOVE THIS BLOCK (+ the .addon.mil div) WHEN THE JULY OFFER ENDS */
-.addon.mil{background:rgba(192,54,43,.10);border:1px dashed rgba(192,54,43,.5);margin-top:14px}
-.addon.mil .pill{background:var(--gold-deep,#8A6B24);color:#fff}
-.addon.mil svg{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:var(--red);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.addon.mob{background:rgba(192,54,43,.09);border:1px dashed rgba(192,54,43,.45)}
+.addon.mob + .addon{margin-top:14px}
+.addon svg{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:var(--red);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 /* ---------- about ---------- */
 .about{background:var(--cream)}
@@ -328,10 +327,10 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   "url":"https://thatsthespotmassagecc.com/",
   "sameAs":["https://thatsthespot.glossgenius.com/"],
   "hasMap":"https://www.google.com/maps/search/?api=1&query=That%27s+the+Spot+Massage+Therapy+3765+S+Alameda+St+Suite+305+Corpus+Christi+TX+78411",
-  "knowsAbout":["Swedish massage","deep tissue massage","hot stone massage","foot massage","therapeutic massage"],
+  "knowsAbout":["Swedish massage","deep tissue massage","hot stone massage","foot massage","assisted stretching","mobile massage","therapeutic massage"],
   "telephone":"+1-361-373-9592",
   "email":"georgealvarado2790@yahoo.com",
-  "priceRange":"$25–$90",
+  "priceRange":"$20–$150",
   "currenciesAccepted":"USD",
   "publicAccess":false,
   "address":{"@type":"PostalAddress","streetAddress":"3765 S Alameda St, Suite 305","addressLocality":"Corpus Christi","addressRegion":"TX","postalCode":"78411","addressCountry":"US"},
@@ -343,8 +342,14 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   "makesOffer":[
     {"@type":"Offer","priceCurrency":"USD","price":"55","itemOffered":{"@type":"Service","name":"Swedish Massage (50 min)"}},
     {"@type":"Offer","priceCurrency":"USD","price":"70","itemOffered":{"@type":"Service","name":"Swedish Massage (80 min)"}},
+    {"@type":"Offer","priceCurrency":"USD","price":"110","itemOffered":{"@type":"Service","name":"Deep Tissue Massage (50 min)"}},
+    {"@type":"Offer","priceCurrency":"USD","price":"150","itemOffered":{"@type":"Service","name":"Deep Tissue Massage (90 min)"}},
     {"@type":"Offer","priceCurrency":"USD","price":"30","itemOffered":{"@type":"Service","name":"Deep Tissue Back Massage (25 min)"}},
-    {"@type":"Offer","priceCurrency":"USD","price":"25","itemOffered":{"@type":"Service","name":"Foot Massage (20 min)"}}
+    {"@type":"Offer","priceCurrency":"USD","price":"25","itemOffered":{"@type":"Service","name":"Foot Massage (20 min)"}},
+    {"@type":"Offer","priceCurrency":"USD","price":"20","itemOffered":{"@type":"Service","name":"Stretch Session (15 min)"}},
+    {"@type":"Offer","priceCurrency":"USD","price":"40","itemOffered":{"@type":"Service","name":"Stretch Session (30 min)"}},
+    {"@type":"Offer","priceCurrency":"USD","price":"20","itemOffered":{"@type":"Service","name":"Hot Stone Add-On"}},
+    {"@type":"Offer","priceCurrency":"USD","price":"25","itemOffered":{"@type":"Service","name":"Mobile Massage Travel Fee (Corpus Christi)"}}
   ]
 }
 </script>
@@ -355,7 +360,7 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
   "mainEntity":[
     {"@type":"Question","name":"Do I need an appointment?","acceptedAnswer":{"@type":"Answer","text":"Yes — That's the Spot is by appointment only, so every client gets a private, unrushed session. Booking online is the easiest way to grab a time, or call or text (361) 373-9592."}},
     {"@type":"Question","name":"What are your hours?","acceptedAnswer":{"@type":"Answer","text":"Open 7 days a week, 7:00 AM to 10:00 PM. Live availability is always shown when you book online."}},
-    {"@type":"Question","name":"Do you offer a military discount?","acceptedAnswer":{"@type":"Answer","text":"Yes — through July 31, 2026, active duty and veterans get a military discount. Mention it when you book or let George know at your visit."}},
+    {"@type":"Question","name":"Do you offer mobile or in-home massage?","acceptedAnswer":{"@type":"Answer","text":"Yes — George can bring the massage to you. A $25 travel fee is added for locations in Corpus Christi; outside Corpus Christi the travel fee is $50. Add the travel fee to your service when you book online."}},
     {"@type":"Question","name":"What is your cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"Life happens. If something comes up and you can't make your appointment, just let George know ahead of time so the spot can be offered to someone else."}},
     {"@type":"Question","name":"How should I prepare for my massage?","acceptedAnswer":{"@type":"Answer","text":"Come as you are — arrive a few minutes early, wear comfortable clothing, and drink water before and after. Let George know any focus areas or injuries so he can tailor the session."}},
     {"@type":"Question","name":"How do I pay, and do you offer payment plans?","acceptedAnswer":{"@type":"Answer","text":"Pay securely when you book or at your visit. Flexible Buy Now, Pay Later is available at checkout for eligible bookings."}},
@@ -435,6 +440,13 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
           <div class="go">Book this <span aria-hidden="true">→</span></div>
         </a>
         <a class="svc rv" href="https://thatsthespot.glossgenius.com/services" target="_blank" rel="noopener">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.9"/></svg></div>
+          <h3>Deep Tissue Massage <span class="pr">$110 / $150</span></h3>
+          <div class="dur">50 or 90 minutes</div>
+          <p>Slow, firm work through the deeper layers of muscle — for chronic tightness, stubborn knots, and the tension a relaxation massage doesn't reach.</p>
+          <div class="go">Book this <span aria-hidden="true">→</span></div>
+        </a>
+        <a class="svc rv" href="https://thatsthespot.glossgenius.com/services" target="_blank" rel="noopener">
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 14c3-2 5-2 8 0s5 2 8 0M4 9c3-2 5-2 8 0s5 2 8 0"/></svg></div>
           <h3>Deep Tissue Back <span class="pr">$30</span></h3>
           <div class="dur">25 minutes</div>
@@ -449,6 +461,13 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
           <div class="go">Book this <span aria-hidden="true">→</span></div>
         </a>
         <a class="svc rv" href="https://thatsthespot.glossgenius.com/services" target="_blank" rel="noopener">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></div>
+          <h3>Stretch Session <span class="pr">$20 / $40</span></h3>
+          <div class="dur">15 or 30 minutes</div>
+          <p>Focused stretching on the areas you name — hips, shoulders, neck, wherever you feel tight. Quick, targeted work to open up your range of motion.</p>
+          <div class="go">Book this <span aria-hidden="true">→</span></div>
+        </a>
+        <a class="svc rv" href="https://thatsthespot.glossgenius.com/services" target="_blank" rel="noopener">
           <div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="14" r="3"/><circle cx="15" cy="10" r="2.4"/><circle cx="18" cy="16" r="1.8"/></svg></div>
           <h3>Hot Stone Add-On <span class="pr">+$20</span></h3>
           <div class="dur">Add to any massage</div>
@@ -456,12 +475,11 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
           <div class="go">Book this <span aria-hidden="true">→</span></div>
         </a>
       </div>
-      <div class="addon rv"><b>New here?</b> Flexible <span class="pill">Buy Now, Pay Later</span> available at checkout for eligible bookings.</div>
-      <!-- MILITARY OFFER — remove this whole div when the offer ends -->
-      <div class="addon mil rv">
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 8.8l6.5-.9L12 2z"/></svg>
-        <b>Military discount</b> <span class="pill">Through July</span> Active duty &amp; veterans — just mention it when you book. Offer ends July 31.
+      <div class="addon mob rv">
+        <svg viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+        <b>Mobile massage</b> <span class="pill">+$25 travel</span> George can come to you. The travel fee is $25 in Corpus Christi, $50 outside the city.
       </div>
+      <div class="addon rv"><b>New here?</b> Flexible <span class="pill">Buy Now, Pay Later</span> available at checkout for eligible bookings.</div>
     </div>
   </section>
 
@@ -527,7 +545,7 @@ footer{background:var(--slate);color:var(--cream-soft);padding:54px 0 40px}
       <div class="faq-list">
         <details class="rv"><summary>Do I need an appointment?<span class="pl">+</span></summary><div class="ans">Yes — That's the Spot is <b>appointment only</b>, so your session is private and unrushed with no waiting around. Booking online is the fastest way to grab a time, or call or text <a href="tel:+13613739592" style="color:var(--gold-deep);font-weight:600">(361) 373-9592</a>.</div></details>
         <details class="rv"><summary>What are your hours?<span class="pl">+</span></summary><div class="ans">Open <b>7 days a week, 7:00 AM – 10:00 PM</b>. Early mornings and late evenings included — the live schedule shows exactly which times are open when you book.</div></details>
-        <details class="rv"><summary>Do you offer a military discount?<span class="pl">+</span></summary><div class="ans">Yes — through July 31, 2026, active duty and veterans get a military discount. Just mention it when you book or let George know at your visit.</div></details>
+        <details class="rv"><summary>Do you offer mobile or in-home massage?<span class="pl">+</span></summary><div class="ans">Yes — George can bring the massage to you. The travel fee is <b>$25 in Corpus Christi</b> and <b>$50 outside the city</b>. Just add the travel fee to your service when you book online.</div></details>
         <details class="rv"><summary>What's your cancellation policy?<span class="pl">+</span></summary><div class="ans">Life happens. If something comes up and you can't make your appointment, just let George know ahead of time so the spot can be offered to someone else.</div></details>
         <details class="rv"><summary>How should I prepare for my massage?<span class="pl">+</span></summary><div class="ans">Come as you are — arrive a few minutes early, wear comfortable clothing, and drink some water before and after. Let George know any focus areas or injuries so he can tailor the session.</div></details>
         <details class="rv"><summary>How do I pay? Do you offer payment plans?<span class="pl">+</span></summary><div class="ans">Pay securely when you book or at your visit. Flexible <b>Buy Now, Pay Later</b> is available at checkout for eligible bookings.</div></details>
